@@ -20,11 +20,6 @@ int main( int argc, char** argv )
     p_str3->append( str );
     p_str1->append( *p_str3 );
 
-    delete p_str2;
-    p_str2 = NULL;
-    delete p_str3;
-    p_str3 = NULL;
-
     cout << "String length = " << p_str1->getLength() << endl;
     cout << "String 1 print(): " << endl;
     p_str1->print();
@@ -35,9 +30,6 @@ int main( int argc, char** argv )
     
     *p_str4 = *p_str1;
 
-    delete p_str1;
-    p_str1 = NULL;
-
     cout << "String 4 length = " << p_str4->getLength() << endl;
     cout << "String 4 getString(): " << endl;
     cout << p_str4->getString() << endl;
@@ -47,6 +39,27 @@ int main( int argc, char** argv )
     cout << "String 4 print(): " << endl;
     p_str4->print();
 
+    *p_str1 = "Hello ";
+    *p_str2 = "World ";
+    *p_str3 = "again!\n";
+    p_str1->append( *p_str2 );
+    p_str1->append( *p_str3 );
+
+    if( *p_str1 == *p_str4 )
+    {
+        cout << "String 1 == String 4" << endl;
+    }
+    else
+    {
+        cout << "String 1 != String 4" << endl;
+    }
+
+    delete p_str1;
+    p_str1 = NULL;
+    delete p_str2;
+    p_str2 = NULL;
+    delete p_str3;
+    p_str3 = NULL;
     delete p_str4;
     p_str4 = NULL;
 

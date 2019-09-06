@@ -185,16 +185,38 @@ MyString& MyString::operator=( MyString& other)
     this->p_tail = this->p_head;
 }
 
-MyString& MyString::operator=( const char *pstr )
+MyString& MyString::operator=( const char *other )
 {
     this->clear();
-    if( pstr )
+    if( other )
     {
-        this->length = strlen( pstr );
+        this->length = strlen( other );
         if( this->length )
         {
-            this->p_head = new StringNode( pstr );
+            this->p_head = new StringNode( other );
             this->p_tail = this->p_head;
         }
     }
 }
+
+bool MyString::operator==( MyString& other )
+{
+    if( strcmp(this->getString(), other.getString()) == 0 )
+    {
+        return true;
+    }
+
+    return false;
+}
+
+bool MyString::operator==( const char *other )
+{
+    if( strcmp(this->getString(), other ) == 0 )
+    {
+        return true;
+    }
+
+    return false;
+}
+
+

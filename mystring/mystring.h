@@ -41,7 +41,8 @@ namespace OKMCU
         void clear( void );
         MyString& operator=( MyString& );
         MyString& operator=( const char * );
-        //operator==
+        bool operator==( MyString& );
+        bool operator==( const char * );
         //operator!=
 
         private:
