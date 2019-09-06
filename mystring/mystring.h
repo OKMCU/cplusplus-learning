@@ -40,7 +40,7 @@ namespace OKMCU
         void print( void ) const;
         void clear( void );
         MyString& operator=( MyString& );
-        //MyString& operator=( const char * );
+        MyString& operator=( const char * );
         //operator==
         //operator!=
 

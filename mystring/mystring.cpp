@@ -185,4 +185,16 @@ MyString& MyString::operator=( MyString& other)
     this->p_tail = this->p_head;
 }
 
-
+MyString& MyString::operator=( const char *pstr )
+{
+    this->clear();
+    if( pstr )
+    {
+        this->length = strlen( pstr );
+        if( this->length )
+        {
+            this->p_head = new StringNode( pstr );
+            this->p_tail = this->p_head;
+        }
+    }
+}

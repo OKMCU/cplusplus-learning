@@ -41,6 +41,11 @@ int main( int argc, char** argv )
     cout << "String 4 length = " << p_str4->getLength() << endl;
     cout << "String 4 getString(): " << endl;
     cout << p_str4->getString() << endl;
+    
+    *p_str4 = "Hello World again!\n";
+    cout << "String 4 length = " << p_str4->getLength() << endl;
+    cout << "String 4 print(): " << endl;
+    p_str4->print();
 
     delete p_str4;
     p_str4 = NULL;
