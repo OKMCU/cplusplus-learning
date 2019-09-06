@@ -100,7 +100,7 @@ size_t MyString::getLength( void ) const
 
 char* MyString::getString( void )
 {
-    const char* p_str = new char[this->length + 1];
+    char* p_str = new char[this->length + 1];
     size_t ptr = 0;
     StringNode* p;
     while( this->p_head != NULL )
@@ -115,6 +115,8 @@ char* MyString::getString( void )
     this->p_head = new StringNode( p_str );
     this->p_tail = this->p_head;
     
+    delete[] p_str;
+
     return this->p_head->getString();
 }
 
@@ -162,4 +164,7 @@ void MyString::print( void ) const
     }
 }
 
+//MyString7 operator=( const MyString& other)
+//{
 
+//}
