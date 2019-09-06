@@ -38,7 +38,8 @@ namespace OKMCU
         void append( const char* pstr );
         void append( MyString &rstr );
         void print( void ) const;
-        //MyString& operator=( const MyString& );
+        void clear( void );
+        MyString& operator=( MyString& );
         //MyString& operator=( const char * );
         //operator==
         //operator!=

@@ -10,7 +10,8 @@ int main( int argc, char** argv )
     MyString *p_str1 = new MyString("Hey!");
     MyString *p_str2 = new MyString("Hello");
     MyString *p_str3 = new MyString("This is a self-defined");
-    
+    MyString *p_str4 = new MyString();
+
     p_str1->append( " " );
     p_str1->append( *p_str2 );
     p_str1->append( " " );
@@ -31,9 +32,18 @@ int main( int argc, char** argv )
     cout << "String length = " << strlen( p_str1->getString() ) << endl;
     cout << "String 1 getString(): " << endl;
     cout << p_str1->getString() << endl;
+    
+    *p_str4 = *p_str1;
 
     delete p_str1;
     p_str1 = NULL;
+
+    cout << "String 4 length = " << p_str4->getLength() << endl;
+    cout << "String 4 getString(): " << endl;
+    cout << p_str4->getString() << endl;
+
+    delete p_str4;
+    p_str4 = NULL;
 
     return 0;
 }

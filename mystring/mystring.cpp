@@ -164,7 +164,25 @@ void MyString::print( void ) const
     }
 }
 
-//MyString7 operator=( const MyString& other)
-//{
+void MyString::clear( void )
+{
+    StringNode* p;
+    while( this->p_head != NULL )
+    {
+        p = this->p_head;
+        this->p_head = this->p_head->getNextNode();
+        delete p;
+    }
+    this->p_tail = NULL;
+    this->length = 0; 
+}
 
-//}
+MyString& MyString::operator=( MyString& other)
+{
+    this->clear();
+    this->length = other.getLength();
+    this->p_head = new StringNode( other.getString() );
+    this->p_tail = this->p_head;
+}
+
+
